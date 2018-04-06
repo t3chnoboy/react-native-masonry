@@ -59,11 +59,12 @@ export default class Masonry extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-   	// Check if it's array and contains more than 1 item
-    	if (!Array.isArray(nextProps.bricks) || nextProps.bricks.length === 0) {
-      		this.setState(state => ({
-           		dataSource: state.dataSource.cloneWithRows([])       
-       		}));
+   		// Check if it's array and contains more than 1 item
+    		if (!Array.isArray(nextProps.bricks) || nextProps.bricks.length === 0) {
+      			this.setState(state => ({
+           			dataSource: state.dataSource.cloneWithRows([])       
+       			}));
+		}
     	}
 
 	resolveBricks({ bricks, columns }, partiallyCache = false) {
