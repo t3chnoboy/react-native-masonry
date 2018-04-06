@@ -59,16 +59,12 @@ export default class Masonry extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const sameData = containMatchingUris(this.props.bricks, nextProps.bricks);
-		const differentColumns = this.props.columns !== nextProps.columns;
-
-		if (sameData && !differentColumns) {
-			// Only re-render a portion of the bricks
-			this.resolveBricks(nextProps, true);
-		} else {
-			this.resolveBricks(nextProps);
-		}
-	}
+   	// Check if it's array and contains more than 1 item
+    	if (!Array.isArray(nextProps.bricks) || nextProps.bricks.length === 0) {
+      		this.setState(state => ({
+           		dataSource: state.dataSource.cloneWithRows([])       
+       		}));
+    	}
 
 	resolveBricks({ bricks, columns }, partiallyCache = false) {
         this.setState({
