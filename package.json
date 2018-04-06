@@ -39,15 +39,13 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "^0.43.0"
+    "react-native": "*"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-preset-react-native": "^2.1.0",
     "jest": "^20.0.4",
     "jest-react-native": "^18.0.0",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.46.4",
     "react-test-renderer": "^16.0.0-alpha.12"
   },
   "contributors": [
